@@ -33,6 +33,11 @@ public class MatchActivity extends AppCompatActivity {
 
             // TODO: display value here
             Bundle extra = getIntent().getExtras();
+            Bitmap bmp = extra.getParcelable("imageHome");
+            Bitmap bmp2 = extra.getParcelable("imageAway");
+
+            homelogo.setImageBitmap(bmp);
+            awaylogo.setImageBitmap(bmp2);
 
             homeText.setText(extras.getString("home"));
             awayText.setText(extras.getString("away"));

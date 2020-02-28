@@ -61,6 +61,14 @@ public class MainActivity extends AppCompatActivity  {
             Toast.makeText(getApplicationContext(), "Nama Harus diisi!",Toast.LENGTH_SHORT).show();
         }else {
             Intent intent = new Intent(this, MatchActivity.class);
+            homeImage.buildDrawingCache();
+            awayImage.buildDrawingCache();
+            Bitmap imageHome = homeImage.getDrawingCache();
+            Bitmap imageAway = awayImage.getDrawingCache();
+            Bundle extra =new Bundle();
+            extra.putParcelable(HOMEIMAGE_KEY,imageHome);
+            extra.putParcelable(AWAYIMAGE_KEY,imageAway);
+            intent.putExtras(extra);
             intent.putExtra(HOMETEAM_KEY, home);
             intent.putExtra(AWAYTEAM_KEY, away);
             startActivity(intent);
