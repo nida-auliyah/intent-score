@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity  {
         String home = homeTeam.getText().toString();
         String away = awayTeam.getText().toString();
 
-        if(away.equals("")||home.equals("")){
-            Toast.makeText(getApplicationContext(), "Nama Harus diisi!",Toast.LENGTH_SHORT).show();
+        if(away.equals("")||home.equals("")||bitmap1==null||bitmap2==null||homeImage.equals("")||awayImage.equals("")){
+            Toast.makeText(getApplicationContext(), "Data Harus diisi!",Toast.LENGTH_SHORT).show();
         }else {
             Intent intent = new Intent(this, MatchActivity.class);
             homeImage.buildDrawingCache();
